@@ -12,7 +12,7 @@
     };
 
     hyprland = {
-      url = "github:vaxerski/Hyprland";
+      url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -20,18 +20,12 @@
   outputs = inputs @ { self, nixpkgs, home-manager, neovim-nightly-overlay, hyprland, ... }:
     let
       user = "michael";
-
-      location = "$HOME/.setup";
-
-      overlays = [
-        neovim-nightly-overlay.overlay
-      ];
     in
     {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager hyprland neovim-nightly-overlay user location;
+          inherit inputs nixpkgs home-manager hyprland neovim-nightly-overlay user;
         }
       );
     };

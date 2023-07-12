@@ -1,10 +1,6 @@
 { config, lib, pkgs, inputs, user, ... }:
 
 {
-  imports = [
-    ../modules/shell
-  ];
-
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
@@ -27,8 +23,11 @@
   };
 
   fonts.fonts = with pkgs; [
-    jetbrains-mono
-    font-awesome
+    (nerdfonts.override {
+      fonts = [
+        "JetBrainsMono"
+      ];
+    })
   ];
 
   environment = {
@@ -39,6 +38,8 @@
     systemPackages = with pkgs; [
       git
       vim
+      nodejs_20
+      clang
     ];
   };
 

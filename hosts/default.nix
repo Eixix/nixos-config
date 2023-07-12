@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, home-manager, hyprland, neovim-nightly-overlay, user, location, ... }:
+{ lib, inputs, nixpkgs, home-manager, hyprland, neovim-nightly-overlay, user, ... }:
 
 let
   system = "x86_64-linux";
@@ -19,7 +19,7 @@ in
     inherit system;
 
     specialArgs = {
-      inherit inputs system user location hyprland;
+      inherit inputs system user hyprland;
       host = {
         hostName = "titania";
       };
@@ -30,6 +30,8 @@ in
 
       ./titania
       ./configuration.nix
+
+      ./programs
 
       {
         nixpkgs.overlays = overlays;
