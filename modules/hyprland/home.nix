@@ -42,7 +42,9 @@ let
 
     bind = SUPER, Return, exec, ${pkgs.kitty}/bin/kitty
     bind = SUPERSHIFT, C, killactive,
-    bind = SUPER, Escape, exit,
+    bind = SUPER, D, exec, ${pkgs.wofi}/bin/wofi --show drun
+    bind = SUPER, B, exec, ${pkgs.firefox}/bin/firefox
+    bind = SUPER, Escape, exec, /home/${user}/.config/wofi/power.sh
 
     bind = SUPER, h, movefocus, l
     bind = SUPER, j, movefocus, d
