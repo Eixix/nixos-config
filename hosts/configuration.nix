@@ -3,7 +3,7 @@
 {
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "networkmanager" ];
     shell = pkgs.zsh;
   };
   security.sudo.wheelNeedsPassword = false;

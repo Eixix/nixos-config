@@ -14,4 +14,7 @@
     efi.canTouchEfiVariables = true;
     timeout = 5;
   };
+  
+  # nmcli device wifi connect <SSID> password <PASSWORD>
+  networking.networkmanager.enable = true;
 }
