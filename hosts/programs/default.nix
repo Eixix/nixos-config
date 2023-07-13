@@ -1,7 +1,3 @@
 {
-  imports = [
-    ./zsh.nix
-    # ./git.nix
-    # ./kitty.nix
-  ];
+  programs.zsh.enable = true;
 }

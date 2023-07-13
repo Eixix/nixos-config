@@ -42,6 +42,8 @@
       cursor_shape = "block";
       cursor_blink_interval = 0;
       background_opacity = "0.9";
+      window_padding_width = 10;
+      shell_integration = "no-cursor";
     };
   };
 
@@ -52,6 +54,26 @@
     extraConfig = {
       pull.rebase = true;
       init.defaultBranch = "main";
+    };
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableAutosuggestions = true;
+
+    syntaxHighlighting.enable = true;
+
+    history.expireDuplicatesFirst = true;
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+      theme = "robbyrussell";
+    };
+
+    shellAliases = {
+      update = "sudo nixos-rebuild switch --flake /home/${user}/flake/#titania";
+      n = "nvim && clear";
     };
   };
 }
