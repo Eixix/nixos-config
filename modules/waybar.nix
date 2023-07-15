@@ -31,6 +31,7 @@
       #cpu,
       #memory,
       #disk,
+      #backlight,
       #pulseaudio,
       #battery,
       #network {
@@ -45,6 +46,10 @@
       #memory,
       #disk {
         background-color: #9B59B6;
+      }
+
+      #backlight {
+        background-color: #ABFC13;
       }
 
       #pulseaudio {
@@ -83,6 +88,7 @@
           "cpu"
           "memory"
           "disk"
+          "backlight"
           "pulseaudio"
           "battery"
           "network"
@@ -119,6 +125,10 @@
         };
         disk = {
           format = "{percentage_used}% <span font='11'></span> ";
+        };
+        backlight = {
+          device = "intel_backlight";
+          format = "{percent}% <span font='11'></span> ";
         };
         pulseaudio = {
           format = "{volume}% <span font='11'>{icon}</span> ";

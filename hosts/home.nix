@@ -25,6 +25,7 @@
       exa
 
       pamixer
+      brightnessctl
 
       fd
       ripgrep
