@@ -140,7 +140,7 @@ in
       { event = "lock"; command = "lock"; }
     ];
     timeouts = [
-      { timeout = 300; command = "${pkgs.swaylock}/bin/swaylock -f";}
+      { timeout = 300; command = "${pkgs.swaylock}/bin/swaylock -f"; }
     ];
   };
 }
