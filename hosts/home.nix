@@ -8,7 +8,7 @@
     ../modules/zsh.nix
     ../modules/wofi.nix
     ../modules/waybar.nix
-    ../modules/rofi.nix
+    ../modules/rofi/default.nix
   ];
 
   home = {
