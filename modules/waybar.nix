@@ -18,6 +18,7 @@
       #cpu,
       #memory,
       #disk,
+      #pulseaudio,
       #battery,
       #network {
         padding: 0 10px;
@@ -31,6 +32,10 @@
       #memory,
       #disk {
         background-color: #9B59B6;
+      }
+
+      #pulseaudio {
+        background-color: #FFA000;
       }
 
       #battery {
@@ -65,6 +70,7 @@
           "cpu"
           "memory"
           "disk"
+          "pulseaudio"
           "battery"
           "network"
         ];
@@ -89,6 +95,13 @@
         };
         disk = {
           format = "{percentage_used}% <span font='11'></span> ";
+        };
+        pulseaudio = {
+          format = "{volume}% <span font='11'>{icon}</span> ";
+          format-muted = "{volume}% <span font='11'>x</span>";
+          format-icons = {
+            default = [ "" "" "" ];
+          };
         };
         battery = {
           format = "{capacity}% <span font='11'>{icon}</span> ";

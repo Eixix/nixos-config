@@ -3,7 +3,7 @@
 {
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" ];
     shell = pkgs.zsh;
   };
   security.sudo.wheelNeedsPassword = false;
@@ -30,6 +30,8 @@
       ];
     })
   ];
+
+  hardware.pulseaudio.enable = true;
 
   environment = {
     variables = {

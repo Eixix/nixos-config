@@ -81,6 +81,9 @@ let
     bind = SUPERSHIFT, 9, movetoworkspace, 9
     bind = SUPERSHIFT, 0, movetoworkspace, 0
 
+    bind=,XF86AudioLowerVolume,exec,${pkgs.pamixer}/bin/pamixer -d 10
+    bind=,XF86AudioRaiseVolume,exec,${pkgs.pamixer}/bin/pamixer -i 10
+    bind=,XF86AudioMute,exec,${pkgs.pamixer}/bin/pamixer -t
     exec = hyprpaper
     exec-once = ${pkgs.waybar}/bin/waybar
   '';

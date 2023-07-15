@@ -24,6 +24,8 @@
       bat
       exa
 
+      pamixer
+
       fd
       ripgrep
       tree-sitter
