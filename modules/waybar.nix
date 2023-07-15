@@ -14,6 +14,19 @@
         color: #FFFFFF;
       }
 
+      #workspaces {
+        background-color: #34C3A0;
+      }
+
+      #workspaces button {
+        border-radius: 0;
+      }
+
+      #workspaces button.active {
+        background-color: #343434;
+        color: #34C3A0;
+      }
+
       #clock,
       #cpu,
       #memory,
@@ -78,6 +91,17 @@
         "wlr/workspaces" = {
           format = "<span font='11'>{name}</span>";
           active-only = false;
+          persistent_workspaces = {
+            "1" = [];
+            "2" = [];
+            "3" = [];
+            "4" = [];
+            "5" = [];
+            "6" = [];
+            "7" = [];
+            "8" = [];
+            "9" = [];
+          };
         };
 
         clock = {
@@ -105,10 +129,10 @@
         };
         battery = {
           format = "{capacity}% <span font='11'>{icon}</span> ";
+          format-charging = "{capacity}% <span font='11'></span>";
           format-icons = [ "" "" "" "" "" ];
           states = {
-            warning = 30;
-            critical = 15;
+            critical = 28;
           };
         };
         network = {
