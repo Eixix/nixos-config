@@ -43,8 +43,9 @@ let
     bind = SUPER, Return, exec, ${pkgs.kitty}/bin/kitty
     bind = SUPERSHIFT, C, killactive,
     bind = SUPER, D, exec, ${pkgs.wofi}/bin/wofi --show drun
+    bind = SUPER, Space, exec, ${pkgs.rofi}/bin/rofi -show drun -theme drun -show-icons
     bind = SUPER, B, exec, ${pkgs.firefox}/bin/firefox
-    bind = SUPER, Escape, exec, /home/${user}/.config/wofi/power.sh
+    bind = SUPER, Escape, exec, /home/${user}/.config/rofi/power.sh
 
     bind = SUPER, h, movefocus, l
     bind = SUPER, j, movefocus, d
@@ -103,5 +104,33 @@ in
     "${hyprPath}/hyprland.conf".text = hyprlandConf;
     "${hyprPath}/hyprpaper.conf".text = hyprpaperConf;
     "${hyprPath}/wallpaper.jpg".source = config.lib.file.mkOutOfStoreSymlink /home/${user}/flake/modules/hyprland/yosemite-lowpoly.jpg;
+  };
+
+  programs.swaylock = {
+    enable = true;
+    settings = {
+      color = "000000f0";
+      font-size = "24";
+      indicator-idle-visible = false;
+      indicator-radius = 100;
+      indicator-thickness = 20;
+      inside-color = "00000000";
+      inside-clear-color = "00000000";
+      inside-ver-color = "00000000";
+      inside-wrong-color = "00000000";
+      key-hl-color = "79b360";
+      line-color = "000000f0";
+      line-clear-color = "000000f0";
+      line-ver-color = "000000f0";
+      line-wrong-color = "000000f0";
+      ring-color = "ffffff50";
+      ring-clear-color = "bbbbbb50";
+      ring-ver-color = "bbbbbb50";
+      ring-wrong-color = "b3606050";
+      text-color = "ffffff";
+      text-ver-color = "ffffff";
+      text-wrong-color = "ffffff";
+      show-failed-attempts = true;
+    };
   };
 }

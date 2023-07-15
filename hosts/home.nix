@@ -8,6 +8,7 @@
     ../modules/zsh.nix
     ../modules/wofi.nix
     ../modules/waybar.nix
+    ../modules/rofi.nix
   ];
 
   home = {
@@ -27,6 +28,7 @@
       pamixer
       brightnessctl
 
+      wl-clipboard
       fd
       ripgrep
       tree-sitter
