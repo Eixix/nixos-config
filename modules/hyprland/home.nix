@@ -42,7 +42,6 @@ let
 
     bind = SUPER, Return, exec, ${pkgs.kitty}/bin/kitty
     bind = SUPERSHIFT, C, killactive,
-    bind = SUPER, D, exec, ${pkgs.wofi}/bin/wofi --show drun
     bind = SUPER, Space, exec, ${pkgs.rofi}/bin/rofi -show drun -theme drun -show-icons
     bind = SUPER, B, exec, ${pkgs.firefox}/bin/firefox
     bind = SUPER, Escape, exec, /home/${user}/.config/rofi/power.sh
