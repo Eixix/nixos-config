@@ -56,6 +56,9 @@ let
     bind = SUPERSHIFT, k, movewindow, u
     bind = SUPERSHIFT, l, movewindow, r
 
+    bind = SUPERCONTROL, h, workspace, r-1
+    bind = SUPERCONTROL, l, workspace, r+1
+
     bind = SUPER, 1, workspace, 1
     bind = SUPER, 2, workspace, 2
     bind = SUPER, 3, workspace, 3
@@ -77,8 +80,21 @@ let
     bind = SUPERSHIFT, 8, movetoworkspace, 8
     bind = SUPERSHIFT, 9, movetoworkspace, 9
     bind = SUPERSHIFT, 0, movetoworkspace, 0
+
+    exec = hyprpaper
+  '';
+
+  hyprPath = "/home/${user}/.config/hypr";
+
+  hyprpaperConf = ''
+    preload = ${hyprPath}/wallpaper.jpg
+    wallpaper = ,${hyprPath}/wallpaper.jpg
   '';
 in
 {
-  home.file."/home/${user}/.config/hypr/hyprland.conf".text = hyprlandConf;
+  home.file = {
+    "${hyprPath}/hyprland.conf".text = hyprlandConf;
+    "${hyprPath}/hyprpaper.conf".text = hyprpaperConf;
+    "${hyprPath}/wallpaper.jpg".source = config.lib.file.mkOutOfStoreSymlink /home/${user}/flake/modules/hyprland/yosemite-lowpoly.jpg;
+  };
 }

@@ -23,6 +23,10 @@ in
       WLR_NO_HARDWARE_CURSORS = "1";
       MOZ_ENABLE_WAYLAND = "1";
     };
+
+    systemPackages = [
+      pkgs.hyprpaper
+    ];
   };
 
   programs.hyprland.enable = true;
