@@ -17,6 +17,10 @@
 
     shellAliases = {
       update = "sudo nixos-rebuild switch --flake /home/${user}/flake/#titania";
+      ls = "exa --icons";
+      ll = "exa -l --icons";
+      la = "exa -la --icons";
+      cat = "bat";
     };
   };
 }

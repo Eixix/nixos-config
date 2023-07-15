@@ -20,6 +20,8 @@
       unzip
       tree
       cargo
+      bat
+      exa
 
       fd
       ripgrep
