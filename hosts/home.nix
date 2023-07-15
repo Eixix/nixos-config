@@ -7,6 +7,7 @@
     ../modules/git.nix
     ../modules/zsh.nix
     ../modules/wofi.nix
+    ../modules/waybar.nix
   ];
 
   home = {

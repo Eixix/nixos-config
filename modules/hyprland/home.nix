@@ -82,6 +82,7 @@ let
     bind = SUPERSHIFT, 0, movetoworkspace, 0
 
     exec = hyprpaper
+    exec-once = ${pkgs.waybar}/bin/waybar
   '';
 
   hyprPath = "/home/${user}/.config/hypr";

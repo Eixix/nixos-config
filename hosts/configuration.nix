@@ -23,6 +23,7 @@
   };
 
   fonts.fonts = with pkgs; [
+    font-awesome
     (nerdfonts.override {
       fonts = [
         "JetBrainsMono"
@@ -40,6 +41,7 @@
       vim
       nodejs_20
       clang
+      killall
     ];
   };
 
