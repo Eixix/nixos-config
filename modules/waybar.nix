@@ -140,6 +140,7 @@
         battery = {
           format = "{capacity}% <span font='11'>{icon}</span> ";
           format-charging = "{capacity}% <span font='11'></span>";
+          format-plugged = "{capacity}% <span font='11'></span>";
           format-icons = [ "" "" "" "" "" ];
           states = {
             critical = 28;
