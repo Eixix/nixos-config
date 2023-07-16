@@ -28,6 +28,9 @@
       bat
       exa
 
+      grim
+      slurp
+
       vim
       google-chrome
 

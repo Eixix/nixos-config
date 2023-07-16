@@ -46,6 +46,11 @@ let
     bind = SUPER, B, exec, ${pkgs.google-chrome}/bin/google-chrome-stable
     bind = SUPER, Escape, exec, /home/${user}/.config/rofi/power.sh
 
+    bind = , Print, exec, grim - | wl-copy
+    bind = CONTROL, Print, exec, grim
+    bind = SUPER, Print, exec, grim -g "$(slurp)" - | wl-copy
+    bind = SUPERCONTROL, Print, exec, grim -g "$(slurp)"
+
     bind = SUPER, h, movefocus, l
     bind = SUPER, j, movefocus, d
     bind = SUPER, k, movefocus, u
