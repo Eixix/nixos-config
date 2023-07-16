@@ -5,11 +5,13 @@
     enable = true;
     userName = "Michael Strobel";
     userEmail = "mstrobel97@gmail.com";
+    signing = {
+      key = keyid;
+      signByDefault = true;
+    };
     extraConfig = {
       pull.rebase = true;
       init.defaultBranch = "main";
-      user.signingkey = keyid;
-      commit.gpgsign = true;
     };
     aliases = {
       s = "status";
