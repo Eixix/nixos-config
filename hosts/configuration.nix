@@ -6,7 +6,6 @@
     extraGroups = [ "wheel" "networkmanager" "audio" ];
     shell = pkgs.zsh;
   };
-  security.sudo.wheelNeedsPassword = false;
 
   time.timeZone = "Europe/Berlin";
   i18n = {
@@ -30,6 +29,16 @@
       ];
     })
   ];
+
+  services.udev.packages = [ pkgs.yubikey-personalization ];
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+  security.pam.services = {
+    login.u2fAuth = true;
+    sudo.u2fAuth = true;
+  };
 
   hardware.pulseaudio.enable = true;
 
