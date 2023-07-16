@@ -28,6 +28,7 @@
       tree
       bat
       exa
+      usbutils
 
       grim
       slurp
