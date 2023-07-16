@@ -1,3 +1,5 @@
+{ keyid, ... }:
+
 {
   programs.git = {
     enable = true;
@@ -6,6 +8,8 @@
     extraConfig = {
       pull.rebase = true;
       init.defaultBranch = "main";
+      user.signingkey = keyid;
+      commit.gpgsign = true;
     };
     aliases = {
       s = "status";
