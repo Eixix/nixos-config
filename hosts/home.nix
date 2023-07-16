@@ -33,6 +33,7 @@
 
       vim
       google-chrome
+      telegram-desktop
 
       pamixer
       brightnessctl
