@@ -16,13 +16,14 @@
 
     packages = with pkgs; [
       btop
-      firefox
       zip
       unzip
       tree
       cargo
       bat
       exa
+
+      google-chrome
 
       pamixer
       brightnessctl
