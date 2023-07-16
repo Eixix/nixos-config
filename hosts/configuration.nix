@@ -33,20 +33,6 @@
 
   hardware.pulseaudio.enable = true;
 
-  environment = {
-    variables = {
-      TERMINAL = "kitty";
-      EDITOR = "nvim";
-    };
-    systemPackages = with pkgs; [
-      git
-      vim
-      nodejs_20
-      clang
-      killall
-    ];
-  };
-
   nix = {
     settings = {
       auto-optimise-store = true;

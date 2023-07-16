@@ -14,20 +14,29 @@
     username = "${user}";
     homeDirectory = "/home/${user}";
 
+    sessionVariables = {
+      EDITOR = "nvim";
+      TERMINAL = "kitty";
+    };
+
     packages = with pkgs; [
+      killall
       btop
       zip
       unzip
       tree
-      cargo
       bat
       exa
 
+      vim
       google-chrome
 
       pamixer
       brightnessctl
 
+      cargo
+      nodejs
+      clang
       wl-clipboard
       fd
       ripgrep
