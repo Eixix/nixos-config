@@ -4,7 +4,7 @@
   services.gpg-agent = {
     enable = true;
     verbose = true;
-    pinentryFlavor = "gtk2";
+    pinentryFlavor = "tty";
     enableSshSupport = true;
   };
 }
