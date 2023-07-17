@@ -30,9 +30,6 @@
       gpgconf --launch gpg-agent
 
       export TOBI=0x4b7228cfe59b7380
-
-      SERIAL=$(gpg-connect-agent 'scd serialno' /bye | head -n 1 | cut -f3 -d' ')
-      gpg-connect-agent "scd checkpin $SERIAL" /bye 1>/dev/null && clear
     '';
   };
 }
