@@ -15,20 +15,20 @@ let
   ];
 in
 {
-  titania = lib.nixosSystem {
+  phobos = lib.nixosSystem {
     inherit system;
 
     specialArgs = {
       inherit inputs system user hyprland;
       host = {
-        hostName = "titania";
+        hostName = "phobos";
       };
     };
 
     modules = [
       hyprland.nixosModules.default
 
-      ./titania
+      ./phobos
       ./configuration.nix
 
       ./programs
@@ -44,7 +44,7 @@ in
         home-manager.extraSpecialArgs = {
           inherit user keyid;
           host = {
-            hostName = "titania";
+            hostName = "phobos";
           };
         };
         home-manager.users.${user} = {

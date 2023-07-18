@@ -16,7 +16,7 @@
     };
 
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake /home/${user}/flake/#titania";
+      update = "sudo nixos-rebuild switch --flake /home/${user}/flake/#phobos";
       ls = "exa --icons";
       ll = "exa -l --icons";
       la = "exa -la --icons";
