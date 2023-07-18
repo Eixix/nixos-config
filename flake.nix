@@ -19,8 +19,8 @@
 
   outputs = inputs @ { self, nixpkgs, home-manager, neovim-nightly-overlay, hyprland, ... }:
     let
-      user = "michael";
-      keyid = "0x3B6861376B6D3D78";
+      user = "tobias";
+      keyid = "0x4b7228cfe59b7380";
     in
     {
       nixosConfigurations = (
