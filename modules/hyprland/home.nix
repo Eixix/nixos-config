@@ -2,7 +2,7 @@
 
 let
   touchpad = with host;
-    if hostName == "titania" then ''
+    if hostName == "phobos" then ''
       touchpad {
         natural_scroll = true
         tap-to-click = true
@@ -41,10 +41,10 @@ let
     }
 
     bind = SUPER, Return, exec, ${pkgs.kitty}/bin/kitty
-    bind = SUPERSHIFT, C, killactive,
-    bind = SUPER, Space, exec, ${pkgs.rofi}/bin/rofi -show drun -theme drun -show-icons
+    bind = SUPERSHIFT, Q, killactive,
+    bind = SUPER, D, exec, ${pkgs.rofi}/bin/rofi -show drun -theme drun -show-icons
     bind = SUPER, B, exec, ${pkgs.google-chrome}/bin/google-chrome-stable
-    bind = SUPER, Escape, exec, /home/${user}/.config/rofi/power.sh
+    bind = SUPERSHIFT, E, exec, /home/${user}/.config/rofi/power.sh
 
     bind = , Print, exec, grim - | wl-copy
     bind = CONTROL, Print, exec, grim
