@@ -1,10 +1,11 @@
 { config, lib, pkgs, inputs, user, ... }:
 
 {
-  users.users.${user} = {
+  users.users.${user.name} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" ];
     shell = pkgs.zsh;
+    initialPassword = user.initialPassword;
   };
 
   time.timeZone = "Europe/Berlin";

@@ -44,7 +44,7 @@ let
     bind = SUPERSHIFT, C, killactive,
     bind = SUPER, Space, exec, ${pkgs.rofi}/bin/rofi -show drun -theme drun -show-icons
     bind = SUPER, B, exec, ${pkgs.google-chrome}/bin/google-chrome-stable
-    bind = SUPER, Escape, exec, /home/${user}/.config/rofi/power.sh
+    bind = SUPER, Escape, exec, /home/${user.name}/.config/rofi/power.sh
 
     bind = , Print, exec, grim - | wl-copy
     bind = CONTROL, Print, exec, grim
@@ -96,7 +96,7 @@ let
     exec-once = ${pkgs.waybar}/bin/waybar
   '';
 
-  hyprPath = "/home/${user}/.config/hypr";
+  hyprPath = "/home/${user.name}/.config/hypr";
 
   hyprpaperConf = ''
     preload = ${hyprPath}/wallpaper.jpg
@@ -107,7 +107,7 @@ in
   home.file = {
     "${hyprPath}/hyprland.conf".text = hyprlandConf;
     "${hyprPath}/hyprpaper.conf".text = hyprpaperConf;
-    "${hyprPath}/wallpaper.jpg".source = config.lib.file.mkOutOfStoreSymlink /home/${user}/flake/modules/hyprland/yosemite-lowpoly.jpg;
+    "${hyprPath}/wallpaper.jpg".source = config.lib.file.mkOutOfStoreSymlink /home/${user.name}/flake/modules/hyprland/yosemite-lowpoly.jpg;
   };
 
   programs.swaylock = {

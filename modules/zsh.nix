@@ -1,4 +1,4 @@
-{ user, keyid, ... }:
+{ user, ... }:
 
 {
   programs.zsh = {
@@ -16,7 +16,7 @@
     };
 
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake /home/${user}/flake/#titania";
+      update = "sudo nixos-rebuild switch --flake /home/${user.name}/flake/#titania";
       ls = "exa --icons";
       ll = "exa -l --icons";
       la = "exa -la --icons";
@@ -24,7 +24,7 @@
     };
 
     initExtra = ''
-      export KEYID=${keyid}
+      export KEYID=${user.keyid}
       export GPG_TTY="$(tty)"
       export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
       gpgconf --launch gpg-agent

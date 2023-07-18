@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, home-manager, hyprland, neovim-nightly-overlay, user, keyid, ... }:
+{ lib, inputs, nixpkgs, home-manager, hyprland, neovim-nightly-overlay, user, ... }:
 
 let
   system = "x86_64-linux";
@@ -42,12 +42,12 @@ in
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = {
-          inherit user keyid;
+          inherit user;
           host = {
             hostName = "titania";
           };
         };
-        home-manager.users.${user} = {
+        home-manager.users.${user.name} = {
           imports = [
             ./home.nix
           ];

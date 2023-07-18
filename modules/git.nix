@@ -1,12 +1,12 @@
-{ keyid, ... }:
+{ user, ... }:
 
 {
   programs.git = {
     enable = true;
-    userName = "Michael Strobel";
-    userEmail = "mstrobel97@gmail.com";
+    userName = user.fullName;
+    userEmail = user.email;
     signing = {
-      key = keyid;
+      key = user.keyid;
       signByDefault = true;
     };
     extraConfig = {
