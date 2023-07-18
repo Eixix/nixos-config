@@ -5,6 +5,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" ];
     shell = pkgs.zsh;
+    initialPassword = "1234";
   };
 
   time.timeZone = "Europe/Berlin";
