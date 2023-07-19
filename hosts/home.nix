@@ -18,8 +18,6 @@
     sessionVariables = {
       EDITOR = "nvim";
       TERMINAL = "kitty";
-      KEYID = user.keyid;
-      TOBI = "0x4b7228cfe59b7380";
     };
 
     packages = with pkgs; [

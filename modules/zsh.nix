@@ -1,4 +1,4 @@
-{ location, ... }:
+{ user, location, ... }:
 
 {
   programs.zsh = {
@@ -24,9 +24,12 @@
     };
 
     initExtra = ''
+      export KEYID=${user.keyid}
       export GPG_TTY="$(tty)"
       export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
       gpgconf --launch gpg-agent
+
+      export TOBI=0x4b7228cfe59b7380
     '';
   };
 }
