@@ -31,7 +31,7 @@ in
       ./titania
       ./configuration.nix
 
-      ./programs
+      ../modules/zsh
 
       {
         nixpkgs.overlays = overlays;

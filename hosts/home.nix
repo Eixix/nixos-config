@@ -5,7 +5,7 @@
     ../modules/hyprland/home.nix
     ../modules/kitty.nix
     ../modules/git.nix
-    ../modules/zsh.nix
+    ../modules/zsh/home.nix
     ../modules/waybar.nix
     ../modules/rofi/home.nix
     ../modules/gnupg.nix
