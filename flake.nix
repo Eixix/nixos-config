@@ -19,13 +19,16 @@
 
   outputs = inputs @ { self, nixpkgs, home-manager, neovim-nightly-overlay, hyprland, ... }:
     let
-      user = import ./user.nix;
+      data = import ./data.nix;
+
+      user = data.user;
+      location = data.location;
     in
     {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager hyprland neovim-nightly-overlay user;
+          inherit inputs nixpkgs home-manager hyprland neovim-nightly-overlay user location;
         }
       );
     };

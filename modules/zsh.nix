@@ -1,4 +1,4 @@
-{ user, ... }:
+{ user, location, ... }:
 
 {
   programs.zsh = {
@@ -16,7 +16,7 @@
     };
 
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake /home/${user.name}/flake/#titania";
+      update = "sudo nixos-rebuild switch --flake ${location}/#titania";
       ls = "exa --icons";
       ll = "exa -l --icons";
       la = "exa -la --icons";

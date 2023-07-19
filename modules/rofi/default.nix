@@ -1,4 +1,4 @@
-{ config, user, ... }:
+{ config, user, location, ... }:
 
 {
   programs.rofi = {
@@ -15,9 +15,9 @@
     };
   };
 
-  home.file.".config/rofi/powermenu.rasi".source = config.lib.file.mkOutOfStoreSymlink /home/${user.name}/flake/modules/rofi/powermenu.rasi;
+  home.file.".config/rofi/powermenu.rasi".source = config.lib.file.mkOutOfStoreSymlink "${location}/modules/rofi/powermenu.rasi";
 
-  home.file.".config/rofi/drun.rasi".source = config.lib.file.mkOutOfStoreSymlink /home/${user.name}/flake/modules/rofi/drun.rasi;
+  home.file.".config/rofi/drun.rasi".source = config.lib.file.mkOutOfStoreSymlink "${location}/modules/rofi/drun.rasi";
 
   home.file.".config/rofi/power.sh" = {
     executable = true;

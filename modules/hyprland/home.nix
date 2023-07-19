@@ -1,4 +1,4 @@
-{ config, lib, pkgs, host, user, ... }:
+{ config, lib, pkgs, host, user, location, ... }:
 
 let
   touchpad = with host;
@@ -107,7 +107,7 @@ in
   home.file = {
     "${hyprPath}/hyprland.conf".text = hyprlandConf;
     "${hyprPath}/hyprpaper.conf".text = hyprpaperConf;
-    "${hyprPath}/wallpaper.jpg".source = config.lib.file.mkOutOfStoreSymlink /home/${user.name}/flake/modules/hyprland/yosemite-lowpoly.jpg;
+    "${hyprPath}/wallpaper.jpg".source = config.lib.file.mkOutOfStoreSymlink "${location}/modules/hyprland/yosemite-lowpoly.jpg";
   };
 
   programs.swaylock = {
