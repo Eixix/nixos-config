@@ -9,15 +9,12 @@
     ../modules/waybar.nix
     ../modules/rofi/home.nix
     ../modules/gnupg.nix
+    ../modules/neovim.nix
   ];
 
   home = {
     username = "${user.name}";
     homeDirectory = "/home/${user.name}";
-
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
 
     packages = with pkgs; [
       killall
@@ -45,10 +42,6 @@
       nodejs
       clang
       wl-clipboard
-      fd
-      ripgrep
-      tree-sitter
-      neovim
     ];
 
     stateVersion = "23.05";
