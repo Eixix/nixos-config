@@ -14,7 +14,6 @@ let
 
     input {
       kb_layout = de
-      kb_options = caps:swapescape
       numlock_by_default = 1
 
       ${touchpad}

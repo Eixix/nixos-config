@@ -15,9 +15,9 @@
     };
   };
 
-  home.file.".config/rofi/powermenu.rasi".source = config.lib.file.mkOutOfStoreSymlink /home/${user}/flake/modules/rofi/powermenu.rasi;
+  home.file.".config/rofi/powermenu.rasi".source = config.lib.file.mkOutOfStoreSymlink /home/${user}/nixos-config/modules/rofi/powermenu.rasi;
 
-  home.file.".config/rofi/drun.rasi".source = config.lib.file.mkOutOfStoreSymlink /home/${user}/flake/modules/rofi/drun.rasi;
+  home.file.".config/rofi/drun.rasi".source = config.lib.file.mkOutOfStoreSymlink /home/${user}/nixos-config/modules/rofi/drun.rasi;
 
   home.file.".config/rofi/power.sh" = {
     executable = true;
