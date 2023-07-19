@@ -1,4 +1,4 @@
-{ config, lib, pkgs, host, user, location, ... }:
+{ config, pkgs, host, user, location, ... }:
 
 let
   touchpad = with host;

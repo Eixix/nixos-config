@@ -1,4 +1,4 @@
-{ config, lib, pkgs, host, system, hyprland, ... }:
+{ pkgs, hyprland, system, ... }:
 
 let
   exec = "exec Hyprland";

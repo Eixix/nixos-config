@@ -1,4 +1,4 @@
-{ config, user, location, ... }:
+{ config, location, ... }:
 
 {
   programs.rofi = {

@@ -1,5 +1,3 @@
-{ pkgs, lib, user, ... }:
-
 {
   imports = [
     ../../modules/hyprland

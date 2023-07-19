@@ -1,4 +1,4 @@
-{ user, location, ... }:
+{ location, ... }:
 
 {
   programs.zsh = {
