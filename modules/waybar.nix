@@ -1,3 +1,5 @@
+{ config, user, ... }:
+
 {
   programs.waybar = {
     enable = true;
@@ -28,6 +30,7 @@
       }
 
       #clock,
+      #custom-yubikey,
       #cpu,
       #memory,
       #disk,
@@ -40,6 +43,11 @@
 
       #clock {
         background-color: #64727D;
+      }
+
+      #custom-yubikey {
+        background-color: #FFFF00;
+        color: #000000;
       }
 
       #cpu,
@@ -85,6 +93,7 @@
           "clock"
         ];
         modules-right = [
+          "custom/yubikey"
           "cpu"
           "memory"
           "disk"
@@ -115,6 +124,10 @@
           interval = 1;
         };
 
+        "custom/yubikey" = {
+          exec = "/home/${user.name}/.config/waybar/script/yubikey.sh";
+          return-type = "json";
+        };
         cpu = {
           format = "{usage}% <span font='11'></span>";
           interval = 1;
@@ -152,6 +165,35 @@
           format-disconnected = "Disconnected";
         };
       };
+    };
+  };
+
+  home.file = {
+    ".config/waybar/script/yubikey.sh" = {
+      executable = true;
+      text = ''
+        #!/bin/sh
+
+        socket="$XDG_RUNTIME_DIR/yubikey-touch-detector.socket"
+
+        while true; do
+          if [ ! -e "$socket" ]; then
+            printf '{"text": "Waiting for YubiKey socket"}\n'
+            while [ ! -e "$socket" ]; do sleep 1; done
+          fi
+          printf '{"text": ""}\n'
+
+          nc -U "$socket" | while read -n5 cmd; do
+            if [ $(echo $cmd | cut -d'_' -f2) = "1" ]; then
+              printf '{"text": " "}\n'
+            else
+              printf '{"text": ""}\n'
+            fi
+          done
+
+          sleep 1
+        done
+      '';
     };
   };
 }

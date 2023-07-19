@@ -30,6 +30,8 @@
       exa
       usbutils
 
+      yubikey-touch-detector
+
       grim
       slurp
 
