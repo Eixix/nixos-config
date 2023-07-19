@@ -103,9 +103,17 @@ let
 in
 {
   home.file = {
-    ".config/hypr/hyprland.conf".text = hyprlandConf;
-    ".config/hypr/hyprpaper.conf".text = hyprpaperConf;
-    ".config/hypr/wallpaper.jpg".source = config.lib.file.mkOutOfStoreSymlink "${location}/modules/hyprland/yosemite-lowpoly.jpg";
+    ".config/hypr/hyprland.conf" = {
+      text = hyprlandConf;
+    };
+
+    ".config/hypr/hyprpaper.conf" = {
+      text = hyprpaperConf;
+    };
+
+    ".config/hypr/wallpaper.jpg" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${location}/modules/hyprland/yosemite-lowpoly.jpg";
+    };
   };
 
   programs.swaylock = {
