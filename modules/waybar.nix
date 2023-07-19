@@ -116,7 +116,7 @@
         };
 
         clock = {
-          format = "{:%d.%m.%Y - %H:%M:%S}";
+          format = "{:%d.%m.%y - %H:%M:%S}";
           interval = 1;
         };
 
