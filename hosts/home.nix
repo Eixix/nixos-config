@@ -17,7 +17,6 @@
 
     sessionVariables = {
       EDITOR = "nvim";
-      TERMINAL = "kitty";
     };
 
     packages = with pkgs; [

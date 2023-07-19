@@ -1,4 +1,10 @@
 {
+  home = {
+    sessionVariables = {
+      TERMINAL = "kitty";
+    };
+  };
+
   programs.kitty = {
     enable = true;
     font = {
