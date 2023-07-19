@@ -7,7 +7,7 @@
     ../modules/git.nix
     ../modules/zsh.nix
     ../modules/waybar.nix
-    ../modules/rofi/default.nix
+    ../modules/rofi/home.nix
     ../modules/gnupg.nix
   ];
 
