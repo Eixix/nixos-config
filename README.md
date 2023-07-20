@@ -63,7 +63,7 @@ passwd
 sudo passwd root
 ```
 
-load gpg key and trust ultimatly
+load gpg key and trust ultimately
 ```bash
 gpg --keyserver keys.gnupg.net --recv-keys $KEYID
 gpg --edit-key $KEYID # trust -> 5 -> y -> quit
