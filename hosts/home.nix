@@ -28,6 +28,8 @@
 
       yubikey-touch-detector
 
+      spotify
+
       grim
       slurp
 
