@@ -4,7 +4,6 @@
 - [ ] pinentry theme
 - [ ] login screen
 - [ ] spotify in waybar?
-- [ ] notifications
 - [ ] boot screen
 
 ## 💽 Installation

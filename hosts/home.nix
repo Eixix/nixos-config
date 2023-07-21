@@ -10,6 +10,7 @@
     ../modules/rofi/home.nix
     ../modules/gnupg.nix
     ../modules/neovim.nix
+    ../modules/dunst.nix
   ];
 
   home = {
