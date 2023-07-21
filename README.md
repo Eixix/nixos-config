@@ -1,6 +1,14 @@
 # nixos-config
 
-## Installation
+## ✔️  TOODs
+- [ ] pinentry theme
+- [ ] login screen
+- [ ] spotify in waybar?
+- [ ] cursor theme
+- [ ] notifications
+- [ ] boot screen
+
+## 💽 Installation
 
 ### Variables
 ```bash
