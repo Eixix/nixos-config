@@ -11,6 +11,7 @@
     ../modules/gnupg.nix
     ../modules/neovim.nix
     ../modules/dunst.nix
+    ../modules/chrome.nix
   ];
 
   home = {
@@ -40,7 +41,6 @@
       slurp
 
       vim
-      google-chrome
       telegram-desktop
       discord
       spotify
