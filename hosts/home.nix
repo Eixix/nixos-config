@@ -30,6 +30,8 @@
 
       spotify
 
+      xdg-utils
+
       grim
       slurp
 
