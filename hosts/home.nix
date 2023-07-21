@@ -28,8 +28,6 @@
 
       yubikey-touch-detector
 
-      spotify
-
       xdg-utils
 
       grim
@@ -38,6 +36,8 @@
       vim
       google-chrome
       telegram-desktop
+      discord
+      spotify
 
       pamixer
       brightnessctl
