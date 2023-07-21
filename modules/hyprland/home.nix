@@ -51,6 +51,12 @@ let
     bind = SUPER, Print, exec, /home/${user.name}/.config/hypr/screenshot.sh clip area
     bind = SUPERCONTROL, Print, exec, /home/${user.name}/.config/hypr/screenshot.sh area
 
+    bind = SUPERCONTROL, Space, exec, playerctl -p spotify play-pause
+    bind = SUPERCONTROL, Right, exec, playerctl -p spotify next
+    bind = SUPERCONTROL, Left, exec, playerctl -p spotify previous
+    bind = SUPERCONTROL, Up, exec, playerctl -p spotify volume 0.1+
+    bind = SUPERCONTROL, Down, exec, playerctl -p spotify volume 0.1-
+
     bind = SUPER, h, movefocus, l
     bind = SUPER, j, movefocus, d
     bind = SUPER, k, movefocus, u

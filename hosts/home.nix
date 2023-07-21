@@ -37,6 +37,8 @@
 
       yubikey-touch-detector
 
+      playerctl
+
       grim
       slurp
 
