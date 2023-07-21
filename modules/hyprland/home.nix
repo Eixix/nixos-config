@@ -84,6 +84,7 @@ let
 
     exec = hyprpaper
     exec-once = ${pkgs.waybar}/bin/waybar
+    exec-once = hyprctl setcursor ${config.home.pointerCursor.name} ${toString config.home.pointerCursor.size}
   '';
 
   hyprpaperConf = ''

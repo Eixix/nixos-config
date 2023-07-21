@@ -16,6 +16,12 @@
     username = "${user.name}";
     homeDirectory = "/home/${user.name}";
 
+    pointerCursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 10;
+    };
+
     packages = with pkgs; [
       killall
       btop
