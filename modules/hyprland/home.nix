@@ -49,7 +49,7 @@ let
     bind = , Print, exec, /home/${user.name}/.config/hypr/screenshot.sh clip
     bind = CONTROL, Print, exec, /home/${user.name}/.config/hypr/screenshot.sh
     bind = SUPER, Print, exec, /home/${user.name}/.config/hypr/screenshot.sh clip area
-    bind = SUPERCONTROL, Print, /home/${user.name}/.config/hypr/screenshot.sh area
+    bind = SUPERCONTROL, Print, exec, /home/${user.name}/.config/hypr/screenshot.sh area
 
     bind = SUPER, h, movefocus, l
     bind = SUPER, j, movefocus, d
