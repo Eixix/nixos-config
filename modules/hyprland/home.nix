@@ -46,10 +46,10 @@ let
     bind = SUPER, B, exec, ${pkgs.google-chrome}/bin/google-chrome-stable
     bind = SUPER, Escape, exec, /home/${user.name}/.config/rofi/power.sh
 
-    bind = , Print, exec, grim - | wl-copy
-    bind = CONTROL, Print, exec, grim
-    bind = SUPER, Print, exec, grim -g "$(slurp)" - | wl-copy
-    bind = SUPERCONTROL, Print, exec, grim -g "$(slurp)"
+    bind = , Print, exec, /home/${user.name}/.config/hypr/screenshot.sh clip
+    bind = CONTROL, Print, exec, /home/${user.name}/.config/hypr/screenshot.sh
+    bind = SUPER, Print, exec, /home/${user.name}/.config/hypr/screenshot.sh clip area
+    bind = SUPERCONTROL, Print, /home/${user.name}/.config/hypr/screenshot.sh area
 
     bind = SUPER, h, movefocus, l
     bind = SUPER, j, movefocus, d
@@ -104,6 +104,49 @@ in
 
     ".config/hypr/wallpaper.jpg" = {
       source = config.lib.file.mkOutOfStoreSymlink "${location}/modules/hyprland/yosemite-lowpoly.jpg";
+    };
+
+    ".config/hypr/screenshot.sh" = {
+      executable = true;
+      text = ''
+        #!/bin/sh
+
+        clip=0
+        area=0
+
+        for arg in "$@"
+        do
+          case $arg in
+            clip)
+              clip=1
+              ;;
+            area)
+              area=1
+              ;;
+          esac
+        done
+
+        if [ $clip -eq 1 ]; then
+          if [ $area -eq 1 ]; then
+            grim -g "$(slurp)" - | wl-copy
+          else
+            grim - | wl-copy
+          fi
+          dunstify Screenshot "saved to clipboard"
+        else
+          dir=/home/${user.name}/Pictures
+          [[ -d $dir ]] || mkdir $dir
+
+          filename=$dir/$(date +'%Y-%m-%d_%H:%M:%S_grim.png')
+
+          if [ $area -eq 1 ]; then
+            grim -g "$(slurp)" $filename
+          else
+            grim $filename
+          fi
+          dunstify Screenshot "saved to $filename"
+        fi
+      '';
     };
   };
 
