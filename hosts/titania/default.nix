@@ -14,5 +14,8 @@
   };
 
   # nmcli device wifi connect <SSID> password <PASSWORD>
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "titania";
+    networkmanager.enable = true;
+  };
 }
