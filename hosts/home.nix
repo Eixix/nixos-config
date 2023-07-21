@@ -20,7 +20,7 @@
     pointerCursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
-      size = 10;
+      size = 6;
     };
 
     packages = with pkgs; [
