@@ -85,6 +85,7 @@
               systemctl reboot
             elif [[ $1 == '--suspend' ]]; then
               systemctl suspend
+              swaylock
             elif [[ $1 == '--logout' ]]; then
               loginctl terminate-session self
             fi
