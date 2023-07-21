@@ -25,10 +25,9 @@
       bat
       exa
       usbutils
+      xdg-utils
 
       yubikey-touch-detector
-
-      xdg-utils
 
       grim
       slurp

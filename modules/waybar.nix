@@ -152,7 +152,7 @@
           format-plugged = "{capacity}% <span font='11'></span>";
           format-icons = [ "" "" "" "" "" ];
           states = {
-            critical = 28;
+            critical = 25;
           };
         };
         network = {
