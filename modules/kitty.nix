@@ -15,7 +15,7 @@
       "kitty_mod+q" = "noop";
       "kitty_mod+l" = "noop";
       "kitty_mod+h" = "launch --type=window --cwd=current --location=hsplit";
-      "kitty_mod+v" = "launch --type=window --cwd=current --location=vsplit";
+      "kitty_mod+b" = "launch --type=window --cwd=current --location=vsplit";
       "kitty_mod+n" = "launch --type=window --cwd=current --location=split";
       "kitty_mod+e" = "layout_action rotate";
       "kitty_mod+z" = "toggle_layout stack";
