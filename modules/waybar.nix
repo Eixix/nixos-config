@@ -12,7 +12,6 @@
 
       window#waybar {
         background-color: rgba(43, 48, 59, 0.5);
-        border-bottom: 3px solid rgba(100, 114, 125, 0.5);
         color: #FFFFFF;
       }
 
@@ -31,6 +30,7 @@
 
       #clock,
       #custom-yubikey,
+      #custom-spotify,
       #cpu,
       #memory,
       #disk,
@@ -48,6 +48,10 @@
       #custom-yubikey {
         background-color: #FFFF00;
         color: #000000;
+      }
+
+      #custom-spotify {
+        background-color: #1DB954
       }
 
       #cpu,
@@ -80,7 +84,7 @@
     '';
 
     settings = {
-      Main = {
+      Top = {
         layer = "top";
         position = "top";
         height = 34;
@@ -89,11 +93,8 @@
         modules-left = [
           "wlr/workspaces"
         ];
-        modules-center = [
-          "clock"
-        ];
+        modules-center = [ ];
         modules-right = [
-          "custom/yubikey"
           "cpu"
           "memory"
           "disk"
@@ -114,31 +115,25 @@
             "5" = [ ];
           };
         };
-
-        clock = {
-          format = "{:%d.%m.%y - %H:%M:%S}";
-          interval = 1;
-        };
-
-        "custom/yubikey" = {
-          exec = "/home/${user.name}/.config/waybar/script/yubikey.sh";
-          return-type = "json";
-        };
         cpu = {
           format = "{usage}% <span font='11'></span>";
           interval = 1;
         };
+
         memory = {
           format = "{percentage}% <span font='11'></span>";
           interval = 1;
         };
+
         disk = {
           format = "{percentage_used}% <span font='11'></span> ";
         };
+
         backlight = {
           device = "intel_backlight";
           format = "{percent}% <span font='11'></span> ";
         };
+
         pulseaudio = {
           format = "{volume}% <span font='11'>{icon}</span> ";
           format-muted = "{volume}% <span font='11'>x</span>";
@@ -146,6 +141,7 @@
             default = [ "" "" "" ];
           };
         };
+
         battery = {
           format = "{capacity}% <span font='11'>{icon}</span> ";
           format-charging = "{capacity}% <span font='11'></span>";
@@ -155,10 +151,43 @@
             critical = 25;
           };
         };
+
         network = {
           format-wifi = "{ipaddr} <span font='11'></span> ";
           format-ethernet = "{ipaddr} <span font='11'></span>";
           format-disconnected = "Disconnected";
+        };
+      };
+
+      Bottom = {
+        layer = "top";
+        position = "bottom";
+        height = 34;
+        output = "eDP-1";
+
+        modules-left = [
+          "custom/spotify"
+        ];
+        modules-center = [
+          "custom/yubikey"
+        ];
+        modules-right = [
+          "clock"
+        ];
+
+        clock = {
+          format = "{:%H:%M:%S - %d.%m.%Y}";
+          interval = 1;
+        };
+
+        "custom/yubikey" = {
+          exec = "/home/${user.name}/.config/waybar/script/yubikey.sh";
+          return-type = "json";
+        };
+
+        "custom/spotify" = {
+          exec = "/home/${user.name}/.config/waybar/script/spotify.sh";
+          interval = 1;
         };
       };
     };
@@ -181,7 +210,7 @@
 
           nc -U "$socket" | while read -n5 cmd; do
             if [ $(echo $cmd | cut -d'_' -f2) = "1" ]; then
-              printf '{"text": " "}\n'
+              printf '{"text": "🔑 Yubikey 🔑"}\n'
             else
               printf '{"text": ""}\n'
             fi
@@ -189,6 +218,28 @@
 
           sleep 1
         done
+      '';
+    };
+
+    ".config/waybar/script/spotify.sh" = {
+      executable = true;
+      text = ''
+        #!/bin/sh
+
+        if playerctl -p spotify status 1>/dev/null 2>/dev/null; then
+          status=""
+
+          if [ $(playerctl -p spotify status) == "Paused" ]; then
+            status=""
+          fi
+
+          song=$(playerctl -p spotify metadata --format "{{ artist }} - {{ title }}")
+          time=$(playerctl -p spotify metadata --format "{{ duration(position) }} / {{ duration(mpris:length) }}")
+
+          echo "  $song  $status  $time"
+        else
+          echo " spotify not running"
+        fi
       '';
     };
   };
