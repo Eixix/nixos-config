@@ -11,6 +11,19 @@
       name = "JetBrainsMono Nerd Font";
       size = 10;
     };
+    keybindings = {
+      "kitty_mod+q" = "noop";
+      "kitty_mod+l" = "noop";
+      "kitty_mod+h" = "launch --type=window --cwd=current --location=hsplit";
+      "kitty_mod+v" = "launch --type=window --cwd=current --location=vsplit";
+      "kitty_mod+n" = "launch --type=window --cwd=current --location=split";
+      "kitty_mod+e" = "layout_action rotate";
+      "kitty_mod+z" = "toggle_layout stack";
+      "ctrl+h" = "kitten pass_keys.py neighboring_window left ctrl+h";
+      "ctrl+j" = "kitten pass_keys.py neighboring_window bottom ctrl+j";
+      "ctrl+k" = "kitten pass_keys.py neighboring_window top ctrl+k";
+      "ctrl+l" = "kitten pass_keys.py neighboring_window right ctrl+l";
+    };
     settings = {
       sync_to_monitor = "no";
       disable_ligatures = "never";
@@ -21,6 +34,7 @@
       background_opacity = "0.9";
       window_padding_width = 10;
       shell_integration = "no-cursor";
+      enabled_layouts = "splits,stack";
 
       allow_remote_control = "socket-only";
       listen_on = "unix:/tmp/kitty";
@@ -29,7 +43,6 @@
       tab_bar_edge = "bottom";
       tab_bar_style = "powerline";
       tab_powerline_style = "slanted";
-      tab_title_template = "{title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}";
 
       foreground = "#C6D0F5";
       background = "#303446";
@@ -41,8 +54,8 @@
       active_border_color = "#BABBF1";
       inactive_border_color = "#737994";
       bell_border_color = "#E5C890";
-      wayland_titlebar_color = "ystem";
-      macos_titlebar_color = "ystem";
+      wayland_titlebar_color = "system";
+      macos_titlebar_color = "system";
       active_tab_foreground = "#232634";
       active_tab_background = "#CA9EE6";
       inactive_tab_foreground = "#C6D0F5";
