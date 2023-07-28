@@ -238,7 +238,7 @@
 
           echo "  $song  $status  $time"
         else
-          echo " spotify not running"
+          echo "  spotify not running"
         fi
       '';
     };

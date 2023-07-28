@@ -1,8 +1,8 @@
 # nixos-config
 
-## ✅ TOODs
+## ✅ TODOs
 - [ ] pinentry theme
-- [ ] login screen
+- [ ] login screen (greetd)
 - [ ] boot screen
 
 ## 💿 Installation
