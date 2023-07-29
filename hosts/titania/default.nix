@@ -1,6 +1,7 @@
 {
   imports = [
     ../../modules/hyprland
+    ../../modules/greetd.nix
     ./hardware-configuration.nix
   ];
 

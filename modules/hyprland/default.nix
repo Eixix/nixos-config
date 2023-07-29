@@ -5,12 +5,6 @@ let
 in
 {
   environment = {
-    loginShellInit = ''
-      if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-        ${exec}
-      fi
-    '';
-
     variables = {
       XDG_CURRENT_DESKTOP = "Hyprland";
       XDG_SESSION_TYPE = "wayland";

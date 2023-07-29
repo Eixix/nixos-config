@@ -2,7 +2,6 @@
 
 ## ✅ TODOs
 - [ ] pinentry theme
-- [ ] login screen (greetd)
 - [ ] boot screen
 
 ## 💿 Installation
