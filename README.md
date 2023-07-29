@@ -90,7 +90,7 @@ git remote set-url origin git@github.com:Kibadda/nixos-config
 
 add u2f keys
 ```bash
-./.nixos-config/add_u2f_keys.sh
+add_u2f_keys
 ```
 
 init submodule

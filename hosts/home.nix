@@ -1,4 +1,4 @@
-{ pkgs, user, ... }:
+{ pkgs, user, location, ... }:
 
 {
   imports = [
@@ -22,6 +22,14 @@
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
       size = 6;
+    };
+
+    sessionPath = [
+      "${location}/bin"
+    ];
+
+    sessionVariables = {
+      LOCATION = location;
     };
 
     packages = with pkgs; [
