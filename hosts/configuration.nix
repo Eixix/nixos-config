@@ -3,7 +3,7 @@
 {
   users.users.${user.name} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" "docker" ];
     shell = pkgs.zsh;
     initialPassword = user.initialPassword;
   };
@@ -41,6 +41,8 @@
   };
 
   hardware.pulseaudio.enable = true;
+
+  virtualisation.docker.enable = true;
 
   nix = {
     settings = {
