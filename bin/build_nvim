@@ -1,0 +1,17 @@
+#!/bin/sh
+
+pushd $LOCATION
+
+echo "updating input neovim-nightly-overlay"
+
+nix flake lock --update-input neovim-nightly-overlay
+
+echo "git add flake.lock"
+
+git add flake.lock
+
+echo "update"
+
+sudo nixos-rebuild switch --flake .#titania
+
+popd
