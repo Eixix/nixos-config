@@ -21,6 +21,7 @@
       ll = "exa -l --icons";
       la = "exa -la --icons";
       cat = "bat";
+      conf = "cd ${location}";
     };
 
     initExtra = ''
