@@ -51,7 +51,7 @@
       }
 
       #custom-spotify {
-        background-color: #1DB954
+        background-color: #1DB954;
       }
 
       #cpu,
