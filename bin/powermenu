@@ -1,0 +1,23 @@
+#!/bin/sh
+
+ACTION=$(gum choose "lock" "logout" "shutdown" "restart")
+
+case $ACTION in
+  lock)
+    CMD="swaylock"
+    ;;
+  sleep)
+    CMD="systemctl suspend && swaylock"
+    ;;
+  logout)
+    CMD="loginctl terminate-session self"
+    ;;
+  shutdown)
+    CMD="systemctl poweroff"
+    ;;
+  restart)
+    CMD="systemctl reboot"
+    ;;
+esac
+
+gum confirm "Are you sure?" && exec $CMD
