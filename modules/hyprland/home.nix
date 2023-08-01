@@ -40,11 +40,15 @@ let
       rounding = 0
     }
 
+    windowrule = float, ^(powermenu)$
+    windowrule = size 20% 20%, ^(powermenu)$$
+    windowrule = center, ^(powermenu)$$
+
     bind = SUPER, Return, exec, ${pkgs.kitty}/bin/kitty
     bind = SUPERSHIFT, C, killactive,
     bind = SUPER, Space, exec, ${pkgs.rofi}/bin/rofi -show drun -theme drun -show-icons
     bind = SUPER, B, exec, ${pkgs.google-chrome}/bin/google-chrome-stable
-    bind = SUPER, Escape, exec, /home/${user.name}/.config/rofi/power.sh
+    bind = SUPER, Escape, exec, kitty --class powermenu powermenu
 
     bind = , Print, exec, /home/${user.name}/.config/hypr/screenshot.sh clip
     bind = CONTROL, Print, exec, /home/${user.name}/.config/hypr/screenshot.sh

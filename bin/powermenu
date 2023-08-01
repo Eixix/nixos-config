@@ -1,6 +1,8 @@
 #!/bin/sh
 
-ACTION=$(gum choose "lock" "logout" "shutdown" "restart")
+UPTIME="`uptime | cut -d ' ' -f7 | sed -e 's/,//'`"
+
+ACTION=$(gum choose --header.foreground="555" --header="uptime: $UPTIME" "lock" "logout" "sleep" "shutdown" "restart")
 
 case $ACTION in
   lock)
@@ -20,4 +22,4 @@ case $ACTION in
     ;;
 esac
 
-gum confirm "Are you sure?" && exec $CMD
+test -n "$ACTION" && gum confirm "Are you sure?" && eval "$CMD"
