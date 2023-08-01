@@ -58,6 +58,8 @@
       pamixer
       brightnessctl
 
+      gum
+
       cargo
       nodejs
       clang
