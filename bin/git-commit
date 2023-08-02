@@ -1,0 +1,54 @@
+#!/bin/sh
+
+if [[ $(git diff --staged) ]]; then
+  if $(gum confirm "New commit?"); then
+    TYPE=$(gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert")
+
+    if [ $? -ne 0 ]; then
+      exit 1
+    fi
+
+    SCOPE=$(gum input --placeholder "scope")
+
+    if [ $? -ne 0 ]; then
+      exit 1
+    fi
+
+    test -n "$SCOPE" && SCOPE="($SCOPE)"
+
+    SUMMARY=$(gum input --value "$TYPE$SCOPE: " --placeholder "Summary of this change")
+
+    if [ $? -ne 0 ]; then
+      exit 1
+    fi
+
+    DESCRIPTION=$(gum write --placeholder "Details of this change (CTRL+D to finish)")
+
+    if [ $? -ne 0 ]; then
+      exit 1
+    fi
+
+    git commit -m "$SUMMARY" -m "$DESCRIPTION"
+  else
+    # TODO: select which commit to amend
+    git commit --amend --no-edit
+  fi
+else
+  if $(gum confirm "Nothing not commit. Change last message?"); then
+    SUMMARY=$(gum input --value "$(git show -s --format=%s)")
+
+    if [ $? -ne 0 ]; then
+      exit 1
+    fi
+
+    DESCRIPTION=$(gum write --value "$(git show -s --format=%b)")
+
+    if [ $? -ne 0 ]; then
+      exit 1
+    fi
+
+    git commit --amend --only -m "$SUMMARY" -m "$DESCRIPTION"
+  else
+    exit 1
+  fi
+fi

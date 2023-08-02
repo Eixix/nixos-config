@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [[ $(git log origin/main..HEAD) ]]; then
+  if $(gum confirm "Force push?"); then
+    git push --force
+  else
+    git push
+  fi
+else
+  exit 1
+fi

@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if $(gum confirm "Add .?"); then
+  git add .
+else
+  CHOOSE=$(git status --short | gum choose --no-limit)
+
+  if [ $? -ne 0 ]; then
+    exit 1
+  fi
+
+  if [[ -n "$CHOOSE" ]]; then
+    FILES=()
+    for item in "$CHOOSE"
+    do
+      FILES+=("$(echo "$item" | sed -e 's/^[[:space:]]*//' | cut -d ' ' -f2)")
+    done
+
+    if $(gum confirm "In hunks?"); then
+      git add --intent-to-add $FILES
+      git add --patch $FILES
+    else
+      git add $FILES
+    fi
+  else
+    exit 1
+  fi
+fi
