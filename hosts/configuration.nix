@@ -34,6 +34,7 @@
   services = {
     udev.packages = [ pkgs.yubikey-personalization ];
     pcscd.enable = true;
+    blueman.enable = true;
   };
 
   security.pam.services = {
@@ -45,6 +46,8 @@
 
   hardware = {
     pulseaudio.enable = true;
+
+    bluetooth.enable = true;
   };
 
   virtualisation.docker.enable = true;
