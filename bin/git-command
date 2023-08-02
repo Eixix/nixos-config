@@ -1,0 +1,16 @@
+#!/bin/sh
+
+case $(gum choose "status" "add" "commit" "push") in
+  status)
+    git status
+    ;;
+  add)
+    git-add
+    ;;
+  commit)
+    git-commit
+    ;;
+  push)
+    git-push
+    ;;
+esac
