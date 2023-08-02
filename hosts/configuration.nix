@@ -31,8 +31,11 @@
     })
   ];
 
-  services.udev.packages = [ pkgs.yubikey-personalization ];
-  services.pcscd.enable = true;
+  services = {
+    udev.packages = [ pkgs.yubikey-personalization ];
+    pcscd.enable = true;
+  };
+
   security.pam.services = {
     login.u2fAuth = true;
     sudo.u2fAuth = true;
@@ -40,7 +43,9 @@
     greetd.u2fAuth = true;
   };
 
-  hardware.pulseaudio.enable = true;
+  hardware = {
+    pulseaudio.enable = true;
+  };
 
   virtualisation.docker.enable = true;
 
