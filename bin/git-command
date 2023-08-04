@@ -1,6 +1,6 @@
 #!/bin/sh
 
-case $(gum choose "status" "add" "commit" "push") in
+case $(gum choose "status" "add" "commit" "push" "log") in
   status)
     git status
     ;;
@@ -12,5 +12,8 @@ case $(gum choose "status" "add" "commit" "push") in
     ;;
   push)
     git-push
+    ;;
+  log)
+    git log --color --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
     ;;
 esac
