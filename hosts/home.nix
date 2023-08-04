@@ -12,6 +12,7 @@
     ../modules/neovim.nix
     ../modules/dunst.nix
     ../modules/chrome.nix
+    ../modules/pass.nix
   ];
 
   home = {

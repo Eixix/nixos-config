@@ -3,6 +3,7 @@
 ## ✅ TODOs
 - [ ] pinentry theme
 - [ ] boot screen
+- [ ] password store
 
 ## 💿 Installation
 

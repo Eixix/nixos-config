@@ -1,0 +1,19 @@
+#!/bin/sh
+
+ALL_FILES=$(find $HOME/.password-store -type f -name "*.gpg")
+
+KEYS=()
+
+for file in $ALL_FILES
+do
+  identifier=$(echo $file | cut -d'/' -f5- | rev | cut -d'.' -f2- | rev)
+  if [[ $identifier != .* ]] && [[ ! -z $identifier ]]; then
+    KEYS+=("$(echo $file | cut -d'/' -f5- | rev | cut -d'.' -f2- | rev)")
+  fi
+done
+
+KEY=$(printf "%s\n" "${KEYS[@]}" | gum choose)
+
+if [ ! -z $KEY ]; then
+  pass show $KEY -c
+fi
