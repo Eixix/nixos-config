@@ -44,6 +44,11 @@ let
     windowrule = size 20% 20%, ^(powermenu)$$
     windowrule = center, ^(powermenu)$$
 
+    windowrule = float, ^(passwordstoremenu)$
+    windowrule = size 200 400, ^(passwordstoremenu)$
+    windowrule = center, ^(passwordstoremenu)$
+    bind = SUPER, P, exec, kitty --class passwordstoremenu passwordstoremenu
+
     bind = SUPER, Return, exec, ${pkgs.kitty}/bin/kitty
     bind = SUPERSHIFT, C, killactive,
     bind = SUPER, Space, exec, ${pkgs.rofi}/bin/rofi -show drun -theme drun -show-icons
