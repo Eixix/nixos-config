@@ -13,6 +13,7 @@
     ../modules/dunst.nix
     ../modules/chrome.nix
     ../modules/pass.nix
+    ../modules/swaylock.nix
   ];
 
   home = {
