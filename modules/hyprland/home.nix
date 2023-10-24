@@ -49,7 +49,11 @@ let
     windowrule = float, ^(passwordstoremenu)$
     windowrule = size 200 400, ^(passwordstoremenu)$
     windowrule = center, ^(passwordstoremenu)$
-    bind = SUPER, P, exec, kitty --class passwordstoremenu passwordstoremenu
+    windowrulev2 = opacity 0.0 override 0.0 override, class:^(passwordstoremenu)$, title:^(finished)$
+    windowrulev2 = nofocus, class:^(passwordstoremenu)$, title:^(finished)$
+    windowrulev2 = noinitialfocus, class:^(passwordstoremenu)$, title:^(finished)$
+    windowrulev2 = noanim, class:^(passwordstoremenu)$, title:^(finished)$
+    bind = SUPER, P, exec, kitty --class passwordstoremenu --listen-on=unix:/tmp/passwordstoremenu passwordstoremenu
 
     bind = SUPER, Return, exec, ${pkgs.kitty}/bin/kitty
     bind = SUPERSHIFT, C, killactive,
