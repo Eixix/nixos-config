@@ -88,7 +88,7 @@
         layer = "top";
         position = "top";
         height = 34;
-        output = "eDP-1";
+        output = [ "eDP-1" "HDMI-A-1" ];
 
         modules-left = [
           "wlr/workspaces"
@@ -163,7 +163,7 @@
         layer = "top";
         position = "bottom";
         height = 34;
-        output = "eDP-1";
+        output = [ "eDP-1" "HDMI-A-1" ];
 
         modules-left = [
           "custom/spotify"
