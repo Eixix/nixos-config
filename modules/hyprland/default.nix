@@ -24,10 +24,4 @@ in
   };
 
   programs.hyprland.enable = true;
-
-  nixpkgs.overlays = [
-    (final: prev: {
-      waybar = hyprland.packages.${system}.waybar-hyprland;
-    })
-  ];
 }

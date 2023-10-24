@@ -22,7 +22,7 @@
     keyMap = "de";
   };
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     font-awesome
     (nerdfonts.override {
       fonts = [

@@ -41,7 +41,7 @@
       unzip
       tree
       bat
-      exa
+      eza
       usbutils
       xdg-utils
 
