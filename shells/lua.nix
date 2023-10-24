@@ -2,9 +2,9 @@
 
 pkgs.mkShell {
   packages = with pkgs; [
-    (pkgs.lua.withPackages (ps: [
-      ps.luasocket
+    (pkgs.luajit.withPackages (ps: [
       ps.cjson
+      ps.lpeg
     ]))
   ];
 }
