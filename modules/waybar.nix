@@ -91,7 +91,7 @@
         output = [ "eDP-1" "HDMI-A-1" ];
 
         modules-left = [
-          "wlr/workspaces"
+          "hyprland/workspaces"
         ];
         modules-center = [ ];
         modules-right = [
@@ -104,15 +104,11 @@
           "network"
         ];
 
-        "wlr/workspaces" = {
+        "hyprland/workspaces" = {
           format = "<span font='11'>{name}</span>";
           active-only = false;
           persistent_workspaces = {
-            "1" = [ ];
-            "2" = [ ];
-            "3" = [ ];
-            "4" = [ ];
-            "5" = [ ];
+            "*" = 5;
           };
         };
         cpu = {
