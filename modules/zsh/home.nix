@@ -22,6 +22,7 @@
       la = "exa -la --icons";
       cat = "bat";
       conf = "cd ${location}";
+      pi-connect = "sshfs webserver:/home/user/lua-webserver ~/raspberry/webserver"
     };
 
     initExtra = ''

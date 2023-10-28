@@ -66,6 +66,8 @@
       nodejs
       clang
       wl-clipboard
+
+      sshfs
     ];
 
     stateVersion = "23.05";
