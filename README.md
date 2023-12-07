@@ -7,6 +7,8 @@
 
 ## 💿 Installation
 
+[NixOS](https://nixos.org/download)
+
 ### Variables
 ```bash
 export DISK=nvme0n1
