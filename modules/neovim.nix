@@ -6,13 +6,8 @@
       fd
       ripgrep
       tree-sitter
+      luajit
     ];
-
-    file = {
-      ".config/nvim" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${location}/nvim";
-      };
-    };
   };
 
   programs.neovim = {
