@@ -44,6 +44,8 @@
     greetd.u2fAuth = true;
   };
 
+  xdg.portal.config.common.default = "*";
+
   hardware = {
     pulseaudio.enable = true;
 

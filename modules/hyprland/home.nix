@@ -105,8 +105,8 @@ let
   '';
 
   hyprpaperConf = ''
-    preload = /home/${user.name}/.config/hypr/wallpaper.jpg
-    wallpaper = ,/home/${user.name}/.config/hypr/wallpaper.jpg
+    preload = /home/${user.name}/.nixos-config/modules/hyprland/yosemite-lowpoly.jpg
+    wallpaper = ,/home/${user.name}/.nixos-config/modules/hyprland/yosemite-lowpoly.jpg
   '';
 in
 {
@@ -117,10 +117,6 @@ in
 
     ".config/hypr/hyprpaper.conf" = {
       text = hyprpaperConf;
-    };
-
-    ".config/hypr/wallpaper.jpg" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${location}/modules/hyprland/yosemite-lowpoly.jpg";
     };
 
     ".config/hypr/screenshot.sh" = {
